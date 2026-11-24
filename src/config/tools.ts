@@ -469,7 +469,7 @@ export const STARTER_TOOLS: ToolConfig[] = [
     id: 'compress-video',
     slug: 'compress-video',
     title: 'Video Compressor',
-    metaTitle: 'Video Compressor — Reduce MP4 Size Free',
+    metaTitle: 'Compress Video Online — Free MP4 Reducer (No Watermark)',
     metaDescription: 'Reduce MP4 video file size online for Discord, email, or web without watermarks. 100% private in-browser compression with zero server upload wait.',
     shortDesc: 'Reduce MP4 and WebM video file size for Discord, email, and social sharing without watermarks.',
     category: 'compress',
@@ -487,6 +487,7 @@ export const STARTER_TOOLS: ToolConfig[] = [
       { title: 'Download Video', description: 'Save your compressed video ready for instant sharing.' }
     ],
     faqs: [
+      { question: 'Is this a free alternative to iLovePDF for video compression?', answer: 'Yes! While iLovePDF specializes in documents and does not compress videos, iLoveTools lets you compress large MP4, WebM, and MOV videos with zero daily file limits and 100% private in-browser encoding.' },
       { question: 'Will the compressed video have a watermark?', answer: 'Never. iLoveTools produces clean, watermark-free videos on every export.' },
       { question: 'Can I compress videos to fit under Discord 25MB or email limits?', answer: 'Yes! The compressor optimizes bitrate to dramatically cut file sizes so clips fit easily into Discord, Slack, and email attachments.' },
       { question: 'Does iLoveTools upload my private videos to a cloud server?', answer: 'No. Video streams are decoded and re-encoded locally inside your browser using client-side WebAssembly.' }
@@ -554,8 +555,8 @@ export const STARTER_TOOLS: ToolConfig[] = [
     id: 'word-to-pdf',
     slug: 'word-to-pdf',
     title: 'Word to PDF Converter',
-    metaTitle: 'Word to PDF Converter — Free DOCX to PDF',
-    metaDescription: 'Convert Microsoft Word (.docx, .doc) documents into clean, professional PDF files. 100% free, instant, and secure with zero file upload to servers.',
+    metaTitle: 'Word Doc to PDF Converter Free — MS Word to PDF Conversion',
+    metaDescription: 'Convert Word doc to PDF online for free. Clean MS Word to PDF document conversion with zero file size limits and 100% private in-browser security.',
     shortDesc: 'Convert Microsoft Word (.docx, .doc) documents into clean, printable PDF documents.',
     category: 'pdf',
     icon: 'FileType',
@@ -570,6 +571,7 @@ export const STARTER_TOOLS: ToolConfig[] = [
       { title: 'Download PDF', description: 'Download your standardized, un-editable PDF document.' }
     ],
     faqs: [
+      { question: 'Is this MS Word to PDF converter completely free?', answer: 'Yes! iLoveTools offers 100% free Word doc to PDF conversion with no subscriptions, watermarks, or daily task limits.' },
       { question: 'Will my fonts and margins stay identical on other computers?', answer: 'Yes! Converting to PDF locks your formatting in place so it looks identical on any PC, Mac, phone, or printer.' },
       { question: 'Are confidential legal documents safe?', answer: 'Yes. All parsing happens locally in your browser. Confidential client agreements and resumes are never transmitted over the internet.' }
     ],
@@ -595,8 +597,8 @@ export const STARTER_TOOLS: ToolConfig[] = [
     id: 'video-to-mp3',
     slug: 'video-to-mp3',
     title: 'Video to MP3 Converter',
-    metaTitle: 'Video to MP3 Converter — Extract Audio Free',
-    metaDescription: 'Extract high-quality MP3 audio tracks from MP4, WebM, and MOV videos online. 100% free, instant, watermark-free in-browser audio extraction tool.',
+    metaTitle: 'MP3 from Video Online — Free Audio Extractor for MP4',
+    metaDescription: 'Extract MP3 from video online for free. Fast, clean in-browser audio extraction from MP4, WebM, and MOV with zero cloud uploads and no watermarks.',
     shortDesc: 'Extract high-quality MP3 audio tracks from MP4, WebM, and MOV video recordings.',
     category: 'media',
     icon: 'Music',
@@ -612,6 +614,7 @@ export const STARTER_TOOLS: ToolConfig[] = [
       { title: 'Download MP3', description: 'Save your clean audio file for podcasts, music, or transcription.' }
     ],
     faqs: [
+      { question: 'How do I extract MP3 from video online for free?', answer: 'Simply upload your MP4, WebM, or MOV video file to iLoveTools, click Extract MP3 Audio, and download your high-fidelity MP3 track instantly with zero server uploads.' },
       { question: 'Can I extract audio from lecture and conference recordings?', answer: 'Yes! Upload any video file and iLoveTools will extract the voice track into a lightweight MP3 audio file.' },
       { question: 'Is audio fidelity preserved?', answer: 'Yes, original sample rates and bitrates are maintained for crisp sound quality.' }
     ],
@@ -678,10 +681,10 @@ export const STARTER_TOOLS: ToolConfig[] = [
   {
     id: 'crop-video',
     slug: 'crop-video',
-    title: 'Video Crop & Pixel Resizer',
-    metaTitle: 'Crop Video Online — Free Video Aspect Ratio',
-    metaDescription: 'Crop and resize videos to 1:1, 9:16 (Reels/TikTok), or 16:9 aspect ratios online. No watermarks, 100% free and completely private in your browser.',
-    shortDesc: 'Crop, reposition, and resize videos to exact aspect ratios for YouTube, Reels, and TikTok.',
+    title: 'Crop Video Without Watermark',
+    metaTitle: 'Crop Video Online Without Watermark — Screen Size & Height',
+    metaDescription: 'Crop video online without watermark. Easily crop video screen size, width, and height for MP4 and WebM. 100% free in-browser tool with zero file uploads.',
+    shortDesc: 'Crop, reposition, and resize videos to exact aspect ratios without watermarks for YouTube, Reels, and TikTok.',
     category: 'edit',
     icon: 'Maximize',
     acceptedFileTypes: '.mp4,.webm',
@@ -696,6 +699,8 @@ export const STARTER_TOOLS: ToolConfig[] = [
       { title: 'Download Cropped Video', description: 'Export your framed clip with zero watermarks.' }
     ],
     faqs: [
+      { question: 'Can I crop video online without watermark on iLoveTools?', answer: 'Yes, 100%. Unlike tools like Clideo or Kapwing that force watermarks, iLoveTools crops video online completely free with zero watermark stamps.' },
+      { question: 'How do I crop video screen size or height online?', answer: 'Select your video file, drag the interactive crop box or select an exact aspect ratio (16:9 for YouTube, 9:16 for TikTok/Reels, or 1:1), and click Crop Video to export your exact dimensions instantly.' },
       { question: 'Can I crop horizontal video into vertical 9:16 for TikTok or Instagram Reels?', answer: 'Yes! Select the 9:16 aspect ratio preset to perfectly frame subjects for mobile social feeds.' },
       { question: 'Is there any watermark on the exported video?', answer: 'No. Unlike other online video editors, iLoveTools never places watermarks on your videos.' }
     ],
@@ -886,8 +891,8 @@ export const STARTER_TOOLS: ToolConfig[] = [
     id: 'video-to-gif',
     slug: 'video-to-gif',
     title: 'Video to GIF Converter',
-    metaTitle: 'Video to GIF Converter — Create Animated GIFs',
-    metaDescription: 'Convert short video clips into lightweight, animated GIFs online. Fast, free, watermark-free, and processed directly in your browser with zero wait.',
+    metaTitle: 'MP4 to Loop GIF Converter — Free Animated GIF Maker',
+    metaDescription: 'Convert MP4 to looping animated GIF online for free. Lightweight, watermark-free GIF maker processed directly in your browser with zero cloud uploads.',
     shortDesc: 'Turn short video clips into animated, looping GIFs for memes, Slack, and presentations.',
     category: 'media',
     icon: 'Film',
@@ -903,6 +908,7 @@ export const STARTER_TOOLS: ToolConfig[] = [
       { title: 'Download Looping GIF', description: 'Save your animated GIF ready for Discord, Slack, and web.' }
     ],
     faqs: [
+      { question: 'How do I convert an MP4 to a loop GIF online?', answer: 'Upload your MP4 video to iLoveTools Video to GIF tool, and our client-side engine will automatically extract frames and output an infinite looping GIF ready for Discord, Slack, and web sharing.' },
       { question: 'Will the generated GIF loop automatically?', answer: 'Yes, all generated GIFs loop infinitely by default, making them perfect for Slack reactions and memes.' },
       { question: 'Is there a watermark on the created GIF?', answer: 'No. iLoveTools generates completely clean GIFs with zero watermarks or logos.' }
     ],
