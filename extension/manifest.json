@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "iLoveTools — 100% Private In-Browser File Utilities",
+  "short_name": "iLoveTools",
+  "version": "1.0.0",
+  "description": "28+ free in-browser file utilities: Merge & compress PDFs, convert images (JPG, PNG, WebP, HEIC), resize photos, and more with zero server uploads.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "iLoveTools — Free Private Utilities",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "homepage_url": "https://www.ilovetools.org"
+}

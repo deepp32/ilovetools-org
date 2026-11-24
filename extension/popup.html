@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iLoveTools</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="icons/icon-32.png" alt="iLoveTools Logo" class="brand-logo">
+      <div class="brand-text">
+        <span class="brand-title">iLoveTools</span>
+        <span class="badge">100% Private</span>
+      </div>
+    </div>
+    <a href="https://www.ilovetools.org" target="_blank" class="web-link" title="Open full website">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </header>
+
+  <div class="search-box">
+    <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Search 28+ in-browser tools..." autocomplete="off">
+  </div>
+
+  <div class="category-tabs" id="categoryTabs">
+    <button class="tab active" data-cat="all">All (28)</button>
+    <button class="tab" data-cat="pdf">PDF</button>
+    <button class="tab" data-cat="image">Image</button>
+    <button class="tab" data-cat="video">Video</button>
+    <button class="tab" data-cat="productivity">Utility</button>
+  </div>
+
+  <div class="quick-widget" id="quickWidget">
+    <div class="widget-header">
+      <span>⚡ Quick Generator</span>
+      <button id="genPassBtn" class="widget-btn">Generate Password</button>
+    </div>
+    <div class="widget-result" id="passResult" style="display:none;">
+      <code id="passText"></code>
+      <button id="copyPassBtn" class="copy-btn">Copy</button>
+    </div>
+  </div>
+
+  <main class="tools-grid" id="toolsGrid">
+    <!-- Populated by popup.js -->
+  </main>
+
+  <footer class="app-footer">
+    <span>🔒 Files never leave your device memory</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

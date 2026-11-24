@@ -1,0 +1,53 @@
+# iLoveTools — Free, Fast & Private Online Utilities
+
+> iLoveTools (https://www.ilovetools.org) is a suite of 28 browser-based digital utilities for PDF, image, video, audio, and productivity tasks. All file operations execute 100% locally in user browser memory using WebAssembly, HTML5 Canvas, and client-side cryptography. Zero files are ever uploaded to remote servers. No registrations, no file size limits, and no paywalls.
+
+## Core Capabilities & Tools
+
+### PDF Tools
+- [Image to PDF Converter](https://www.ilovetools.org/image-to-pdf): Converts single or multiple JPG, PNG, and WebP images into clean, printable A4 PDF documents.
+- [Google Docs to PDF](https://www.ilovetools.org/google-docs-to-pdf): Converts any public or shared Google Docs, Google Sheets, or Google Slides link into a direct PDF download. Also supports Word (.docx) and plain text (.txt) export.
+- [Add Page Numbers to PDF](https://www.ilovetools.org/add-page-numbers-to-pdf): Stamps clean sequential page numbers ("Page X of Y", "X of Y", or clean digits) onto PDF documents with custom placement, font size, and cover page skipping.
+- [PDF to Excel](https://www.ilovetools.org/pdf-to-excel): Extracts tabular data from PDF files into editable Microsoft Excel (.xlsx) workbooks.
+- [PDF to PowerPoint](https://www.ilovetools.org/pdf-to-powerpoint): Converts presentation decks into editable PowerPoint (.pptx) slides.
+- [PDF to Word](https://www.ilovetools.org/pdf-to-word): Converts PDF documents into editable Word (.docx) files.
+- [Merge PDF](https://www.ilovetools.org/merge-pdf): Combines multiple PDF documents into a single organized file with drag-and-drop reordering.
+- [Split PDF](https://www.ilovetools.org/split-pdf): Extracts individual pages or custom page ranges from a PDF.
+- [Compress PDF](https://www.ilovetools.org/compress-pdf): Reduces PDF file size locally using stream optimization and zlib compression.
+- [Rotate PDF](https://www.ilovetools.org/rotate-pdf): Rotates PDF pages 90°, 180°, or 270° with live visual preview.
+- [Watermark PDF](https://www.ilovetools.org/watermark-pdf): Stamps custom text, confidentiality marks, or copyright watermarks across all pages.
+- [Word to PDF](https://www.ilovetools.org/word-to-pdf): Converts Microsoft Word documents into universal PDF format.
+- [Excel to PDF](https://www.ilovetools.org/excel-to-pdf): Formats spreadsheets into clean, printable PDF documents.
+- [PowerPoint to PDF](https://www.ilovetools.org/powerpoint-to-pdf): Converts presentation slides into distributable PDF documents.
+- [PDF to JPG](https://www.ilovetools.org/pdf-to-jpg): Renders PDF pages into high-resolution JPG images.
+
+### Image & Photo Tools
+- [Resize Image](https://www.ilovetools.org/resize-image): Resizes JPG, PNG, and WebP photo dimensions by exact pixels (W × H) or percentage scale (25%, 50%, 75%, 200%) with proportional aspect ratio lock.
+- [Compress Image](https://www.ilovetools.org/compress-image): High-speed client-side image compression for JPG, PNG, and WebP photos with custom quality controls and zero file size caps.
+- [Crop Photo](https://www.ilovetools.org/crop-photo): Precision pixel-dimension cropping with preset aspect ratios (16:9, 1:1, 4:3, 9:16).
+- [PNG to JPG](https://www.ilovetools.org/png-to-jpg): Converts PNG graphics to JPG with automatic background alpha handling.
+- [JPG to PNG](https://www.ilovetools.org/jpg-to-png): Converts JPEG images into lossless PNG format.
+- [HEIC to JPG](https://www.ilovetools.org/heic-to-jpg): Converts Apple iPhone camera photos (.heic) into standard JPG format.
+
+### Video & Audio Tools
+- [Compress Video](https://www.ilovetools.org/compress-video): Compresses MP4 and WebM video files locally with zero upload wait.
+- [Crop Video](https://www.ilovetools.org/crop-video): Precision video cropping with aspect ratio presets for social media.
+- [Mute Video](https://www.ilovetools.org/mute-video): Strips audio tracks from video files in seconds with zero quality loss.
+- [Video to MP3](https://www.ilovetools.org/video-to-mp3): Extracts audio tracks into standalone MP3 audio files.
+- [Video to GIF](https://www.ilovetools.org/video-to-gif): Converts short video clips into animated GIFs.
+
+### Productivity Tools
+- [QR Code Generator](https://www.ilovetools.org/qr-code-generator): Generates permanent, scannable static QR codes with resolution up to 1200px.
+- [Password Generator](https://www.ilovetools.org/password-generator): Cryptographically secure password generator via browser Web Crypto CSPRNG with entropy scoring.
+- [Word Counter](https://www.ilovetools.org/word-counter): Real-time analysis of words, characters, sentences, paragraphs, and reading time.
+- [Case Converter](https://www.ilovetools.org/case-converter): Transforms text between UPPERCASE, lowercase, Title Case, Sentence case, and camelCase.
+
+## Privacy & Security Architecture
+- **100% Client-Side Execution**: File bytes are loaded into browser memory via HTML5 File API and processed using WebAssembly and client-side JavaScript.
+- **Zero Server Uploads**: No files, text snippets, or personal documents are transmitted to external servers.
+- **No Account Required**: Completely frictionless access with no email, credit card, or signup gates.
+- **No File Size Caps**: Process heavy multi-gigabyte files directly using device hardware.
+
+## Detailed Documentation
+- [Full LLM Specification](https://www.ilovetools.org/llms-full.txt): Complete technical specification and input/output schema for all tools.
+- [Sitemap](https://www.ilovetools.org/sitemap.xml): Complete list of all tool endpoints.
