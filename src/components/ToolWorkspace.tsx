@@ -40,6 +40,7 @@ import {
   FileText,
   ExternalLink,
   AlertCircle,
+  X,
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { createValidPdfDocument } from '@/utils/pdfGenerator';
@@ -394,7 +395,7 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
   };
 
   // Link QR Generator State
-  const [qrLink, setQrLink] = useState<string>('https://example.com');
+  const [qrLink, setQrLink] = useState<string>('');
   const [qrResolution, setQrResolution] = useState<number>(600);
   const qrCanvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -403,7 +404,7 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
     import('qrcode')
       .then(({ default: QRCode }) => {
         if (!qrCanvasRef.current) return;
-        QRCode.toCanvas(qrCanvasRef.current, qrLink || 'https://example.com', {
+        QRCode.toCanvas(qrCanvasRef.current, qrLink.trim() || 'https://www.ilovetools.org', {
           width: 260,
           margin: 2,
           color: {
@@ -422,7 +423,7 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
     const tempCanvas = document.createElement('canvas');
     QRCode.toCanvas(
       tempCanvas,
-      qrLink || 'https://example.com',
+      qrLink.trim() || 'https://www.ilovetools.org',
       {
         width: qrResolution,
         margin: 2,
@@ -1344,16 +1345,27 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
 
               {/* URL Input */}
               <div className="w-full max-w-xl relative mb-4">
-                <LinkIcon className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <LinkIcon className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   id="qr-link-input"
-                  type="url"
+                  type="text"
                   aria-label="URL or text for QR code"
                   value={qrLink}
+                  onFocus={(e) => e.target.select()}
                   onChange={(e) => setQrLink(e.target.value)}
-                  placeholder="https://yourwebsite.com or social profile..."
-                  className="w-full h-11 pl-10 pr-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 text-sm font-medium focus:outline-none focus:border-neutral-900 dark:focus:border-neutral-100 transition-colors"
+                  placeholder="Paste your link or type text here..."
+                  className="w-full h-11 pl-10 pr-10 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 text-sm font-medium focus:outline-none focus:border-rose-500 dark:focus:border-rose-500 transition-colors shadow-2xs"
                 />
+                {qrLink && (
+                  <button
+                    type="button"
+                    onClick={() => setQrLink('')}
+                    aria-label="Clear link"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 rounded-md transition-colors cursor-pointer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
               </div>
 
               {/* Quick test links */}
@@ -1410,7 +1422,7 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
               <div className="p-4 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 mb-6 flex flex-col items-center">
                 <canvas ref={qrCanvasRef} className="rounded-xl" />
                 <span className="text-[11px] font-mono text-neutral-400 mt-2 truncate max-w-xs">
-                  {qrLink || 'https://example.com'}
+                  {qrLink.trim() || 'https://www.ilovetools.org'}
                 </span>
               </div>
 
