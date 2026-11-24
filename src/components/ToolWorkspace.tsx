@@ -82,6 +82,15 @@ import {
   PageNumberOptions,
   VideoProgressInfo,
 } from '@/utils/mediaProcessor';
+import {
+  pdfToExcelClient,
+  pdfToJpgClient,
+  heicToJpgClient,
+  pdfToWordClient,
+  wordToPdfClient,
+  videoToGifClient,
+  pdfToPptClient,
+} from '@/utils/documentConverters';
 
 interface ToolWorkspaceProps {
   tool: ToolConfig;
@@ -904,6 +913,55 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
           },
           (pct) => setProgress(Math.max(25, pct))
         );
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'pdf-to-excel') {
+        setProgress(20);
+        const result = await pdfToExcelClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'pdf-to-jpg') {
+        setProgress(20);
+        const result = await pdfToJpgClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'heic-to-jpg') {
+        setProgress(20);
+        const result = await heicToJpgClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'pdf-to-word') {
+        setProgress(20);
+        const result = await pdfToWordClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'word-to-pdf') {
+        setProgress(20);
+        const result = await wordToPdfClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'video-to-gif') {
+        setProgress(20);
+        const result = await videoToGifClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'pdf-to-powerpoint') {
+        setProgress(20);
+        const result = await pdfToPptClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
         setProcessResult(result);
         setProgress(100);
       } else {
