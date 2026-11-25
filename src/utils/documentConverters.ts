@@ -495,3 +495,124 @@ function escapeXml(unsafe: string): string {
     }
   });
 }
+
+/**
+ * 8. Resize PDF to A4
+ * Scales every page in the uploaded PDF document to fit standard A4 paper dimensions (595.28 x 841.89 pt).
+ * Preserves original content aspect ratio and centers the page with uniform margins.
+ */
+export async function resizePdfToA4Client(
+  file: File,
+  onProgress?: (pct: number) => void
+): Promise<ProcessResult> {
+  onProgress?.(15);
+  const { PDFDocument, PageSizes } = await import('pdf-lib');
+  const buffer = await file.arrayBuffer();
+  onProgress?.(30);
+
+  const srcDoc = await PDFDocument.load(buffer, { ignoreEncryption: true });
+  const outDoc = await PDFDocument.create();
+
+  const numPages = srcDoc.getPageCount();
+  const A4_WIDTH = PageSizes.A4[0]; // 595.28
+  const A4_HEIGHT = PageSizes.A4[1]; // 841.89
+
+  const pageIndices = Array.from({ length: numPages }, (_, i) => i);
+  const embeddedPages = await outDoc.embedPdf(srcDoc, pageIndices);
+
+  for (let i = 0; i < numPages; i++) {
+    onProgress?.(30 + Math.round((i / numPages) * 55));
+    const srcPage = srcDoc.getPage(i);
+    const { width: origWidth, height: origHeight } = srcPage.getSize();
+    const isLandscape = origWidth > origHeight;
+
+    const targetWidth = isLandscape ? A4_HEIGHT : A4_WIDTH;
+    const targetHeight = isLandscape ? A4_WIDTH : A4_HEIGHT;
+
+    const margin = 20;
+    const availWidth = targetWidth - 2 * margin;
+    const availHeight = targetHeight - 2 * margin;
+
+    const scale = Math.min(availWidth / origWidth, availHeight / origHeight);
+    const scaledWidth = origWidth * scale;
+    const scaledHeight = origHeight * scale;
+
+    const x = (targetWidth - scaledWidth) / 2;
+    const y = (targetHeight - scaledHeight) / 2;
+
+    const newPage = outDoc.addPage([targetWidth, targetHeight]);
+    newPage.drawPage(embeddedPages[i], {
+      x,
+      y,
+      width: scaledWidth,
+      height: scaledHeight,
+    });
+  }
+
+  onProgress?.(90);
+  const outBytes = await outDoc.save({ useObjectStreams: true });
+  const outBlob = new Blob([outBytes as unknown as BlobPart], { type: 'application/pdf' });
+  onProgress?.(100);
+
+  return {
+    blob: outBlob,
+    downloadUrl: URL.createObjectURL(outBlob),
+    originalSize: file.size,
+    compressedSize: outBlob.size,
+    reductionPercent: 0,
+    outputExtension: 'pdf',
+  };
+}
+
+/**
+ * 9. Convert PDF to ZIP
+ * Splits and packages each page of a PDF into individual files, bundled cleanly into a single .zip archive.
+ */
+export async function pdfToZipClient(
+  file: File,
+  onProgress?: (pct: number) => void
+): Promise<ProcessResult> {
+  onProgress?.(15);
+  const { PDFDocument } = await import('pdf-lib');
+  const JSZip = (await import('jszip')).default;
+  const buffer = await file.arrayBuffer();
+  onProgress?.(30);
+
+  const srcDoc = await PDFDocument.load(buffer, { ignoreEncryption: true });
+  const numPages = srcDoc.getPageCount();
+  const zip = new JSZip();
+
+  const baseName = file.name.replace(/\.[^/.]+$/, '');
+  const folder = zip.folder(baseName) || zip;
+
+  for (let i = 0; i < numPages; i++) {
+    onProgress?.(30 + Math.round((i / numPages) * 50));
+    const singleDoc = await PDFDocument.create();
+    const [copiedPage] = await singleDoc.copyPages(srcDoc, [i]);
+    singleDoc.addPage(copiedPage);
+
+    const singleBytes = await singleDoc.save({ useObjectStreams: true });
+    const pageNum = String(i + 1).padStart(String(numPages).length, '0');
+    folder.file(`${baseName}-page-${pageNum}.pdf`, singleBytes);
+  }
+
+  onProgress?.(85);
+  const zipBlob = await zip.generateAsync(
+    { type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } },
+    (metadata) => {
+      onProgress?.(85 + Math.round(metadata.percent * 0.14));
+    }
+  );
+
+  onProgress?.(100);
+
+  return {
+    blob: zipBlob,
+    downloadUrl: URL.createObjectURL(zipBlob),
+    originalSize: file.size,
+    compressedSize: zipBlob.size,
+    reductionPercent: 0,
+    outputExtension: 'zip',
+  };
+}
+

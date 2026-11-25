@@ -4,10 +4,12 @@ import { STARTER_TOOLS } from '@/config/tools';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ilovetools.org';
   const stableReleaseDate = new Date('2026-11-20T00:00:00.000Z');
-  const recentUpdateDate = new Date('2026-11-24T00:00:00.000Z');
+  const recentUpdateDate = new Date('2026-11-25T00:00:00.000Z');
 
   // Priority flagship tools being indexed & boosted from live search queries
   const prioritySlugs = new Set([
+    'resize-pdf-to-a4',
+    'pdf-to-zip',
     'crop-video',
     'compress-video',
     'word-to-pdf',

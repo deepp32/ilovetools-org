@@ -1300,6 +1300,120 @@ export const STARTER_TOOLS: ToolConfig[] = [
       ]
     },
     relatedToolSlugs: ['merge-pdf', 'split-pdf', 'compress-pdf', 'watermark-pdf', 'rotate-pdf']
+  },
+  // 30. Resize PDF to A4
+  {
+    id: 'resize-pdf-to-a4',
+    slug: 'resize-pdf-to-a4',
+    title: 'Resize PDF to A4 Online',
+    metaTitle: 'Resize PDF to A4 Free — Fit & Scale PDF to A4 Paper Size',
+    metaDescription: 'Resize PDF pages to standard A4 paper size online for free. Scale US Letter, legal, or custom PDF documents to fit A4 sheets without cropping text. 100% private in-browser.',
+    shortDesc: 'Scale, fit, and resize PDF pages to standard A4 paper dimensions (210 × 297 mm) for seamless printing.',
+    category: 'pdf',
+    icon: 'FileText',
+    acceptedFileTypes: '.pdf',
+    acceptedMimeTypes: ['application/pdf'],
+    maxFileSizeMB: 5000,
+    actionButtonText: 'Resize to A4',
+    outputExtension: 'pdf',
+    isPopular: true,
+    steps: [
+      { title: 'Upload PDF', description: 'Select any PDF file with non-standard page sizes, US Letter, or custom receipts.' },
+      { title: 'Automatic A4 Fitting', description: 'Our vector scaling engine calculates proportional dimensions with uniform margins.' },
+      { title: 'Download A4 PDF', description: 'Save your print-ready A4 document instantly with zero quality loss or watermarks.' }
+    ],
+    faqs: [
+      {
+        question: 'How does Resize PDF to A4 work?',
+        answer: 'The tool reads your PDF vector coordinates and embeds each page into a standard ISO A4 sheet (595.28 × 841.89 points). It calculates exact proportional scaling to ensure all text, images, and tables fit comfortably inside standard print margins.'
+      },
+      {
+        question: 'Will my text or tables get cut off or stretched?',
+        answer: 'No. The scaling preserves the exact aspect ratio of the original content. It never stretches or distorts text, and adds safety margins to prevent any printer clipping.'
+      },
+      {
+        question: 'Can it handle mixed portrait and landscape pages?',
+        answer: 'Yes. Landscape pages are automatically fitted onto landscape A4 sheets, and portrait pages onto portrait A4 sheets.'
+      },
+      {
+        question: 'Is it completely free with no watermarks?',
+        answer: 'Yes. iLoveTools generates 100% clean, professional PDF documents without promotional stamps or watermarks.'
+      },
+      {
+        question: 'Are my confidential documents uploaded to a server?',
+        answer: 'Zero files are uploaded. All vector calculation and PDF rendering execute locally in your browser memory.'
+      }
+    ],
+    editorial: {
+      heading: 'Scale Any PDF Document to Standard International A4 Dimensions',
+      paragraphs: [
+        'Printing US Letter documents in countries using ISO A4 paper (or vice versa) frequently results in truncated headers, clipped footers, or unprintable margins. Manually adjusting printer driver scale settings often distorts font weights and vector line art.',
+        'iLoveTools Resize PDF to A4 solves this problem at the document level. It embeds each page into an exact A4 coordinate space, centers the artwork, and applies safe printer margins.',
+        'Enjoy fast client-side conversion for legal contracts, academic papers, tax forms, and eBooks with complete privacy.'
+      ],
+      features: [
+        { title: 'Exact ISO A4 Standard', desc: 'Resizes pages to standard 210 × 297 mm (595 × 842 pt) specifications.' },
+        { title: 'Aspect Ratio Preservation', desc: 'Proportional scaling prevents text stretching or graphic distortion.' },
+        { title: 'Auto Orientation Detection', desc: 'Adapts portrait and landscape pages seamlessly.' },
+        { title: '100% Local Browser Privacy', desc: 'Client-side processing guarantees zero file exposure to external servers.' }
+      ]
+    },
+    relatedToolSlugs: ['compress-pdf', 'merge-pdf', 'split-pdf', 'add-page-numbers-to-pdf', 'rotate-pdf']
+  },
+  // 31. Convert PDF to ZIP
+  {
+    id: 'pdf-to-zip',
+    slug: 'pdf-to-zip',
+    title: 'Convert PDF to ZIP Free Online',
+    metaTitle: 'Convert PDF to ZIP File Free — Extract PDF Pages to ZIP Archive',
+    metaDescription: 'Convert PDF to ZIP file free online. Split and package all pages of any PDF document into an organized .zip archive with 1 click. Zero server uploads and 100% private.',
+    shortDesc: 'Extract and package individual PDF pages into a single organized, downloadable .zip archive.',
+    category: 'pdf',
+    icon: 'FileText',
+    acceptedFileTypes: '.pdf',
+    acceptedMimeTypes: ['application/pdf'],
+    maxFileSizeMB: 5000,
+    actionButtonText: 'Convert to ZIP',
+    outputExtension: 'zip',
+    isPopular: true,
+    steps: [
+      { title: 'Choose PDF', description: 'Upload any multi-page PDF document you want to extract.' },
+      { title: 'Instant Page Splitting', description: 'The tool extracts each page into a standalone clean PDF document.' },
+      { title: 'Download ZIP Archive', description: 'Save the packaged .zip archive containing all your numbered page files.' }
+    ],
+    faqs: [
+      {
+        question: 'Why convert a PDF into a ZIP archive?',
+        answer: 'Converting PDF to ZIP allows you to extract individual pages as distinct files for easy email attachments, document separation, or uploading to portals that restrict multi-page documents.'
+      },
+      {
+        question: 'Are the extracted files valid PDFs?',
+        answer: 'Yes. Each page inside the ZIP archive is an independent, fully compliant PDF file (named filename-page-01.pdf, etc.) ready to view, share, or print.'
+      },
+      {
+        question: 'Is there any file size limit?',
+        answer: 'No file size limits. Because iLoveTools processes files directly on your device using WebAssembly, you can extract large multi-hundred-page documents without cloud upload limits.'
+      },
+      {
+        question: 'Is this an alternative to iLovePDF?',
+        answer: 'Yes. iLoveTools provides a completely free alternative with zero daily limits, zero watermarks, and 100% in-browser privacy.'
+      }
+    ],
+    editorial: {
+      heading: 'Extract and Package Multi-Page PDFs into Compact ZIP Archives',
+      paragraphs: [
+        'Handling large multi-page PDF documents often requires distributing individual pages to separate recipients or uploading individual invoices to accounting systems.',
+        'iLoveTools Convert PDF to ZIP splits your entire document page by page in memory and compiles them into a clean, deflate-compressed ZIP archive ready for 1-click download.',
+        'With client-side execution, even sensitive corporate financial audits or medical records can be archived securely with zero data transmission.'
+      ],
+      features: [
+        { title: 'Single-Click Page Extraction', desc: 'Separates every page into cleanly formatted individual PDF documents.' },
+        { title: 'Standard ZIP Compression', desc: 'Generates universal .zip archives compatible with Windows, macOS, Linux, and mobile.' },
+        { title: 'Numbered File Naming', desc: 'Neatly prefixes files as page-01, page-02 for instant sorting.' },
+        { title: 'Zero Cloud Uploads', desc: 'Processes heavy PDFs entirely in local browser memory.' }
+      ]
+    },
+    relatedToolSlugs: ['split-pdf', 'merge-pdf', 'compress-pdf', 'pdf-to-jpg', 'resize-pdf-to-a4']
   }
 ];
 

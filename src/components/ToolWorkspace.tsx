@@ -91,6 +91,8 @@ import {
   wordToPdfClient,
   videoToGifClient,
   pdfToPptClient,
+  resizePdfToA4Client,
+  pdfToZipClient,
 } from '@/utils/documentConverters';
 
 interface ToolWorkspaceProps {
@@ -961,6 +963,20 @@ export default function ToolWorkspace({ tool, relatedTools: propRelatedTools }: 
       } else if (tool.id === 'pdf-to-powerpoint') {
         setProgress(20);
         const result = await pdfToPptClient(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'resize-pdf-to-a4') {
+        setProgress(20);
+        const result = await resizePdfToA4Client(activeFile, (pct) => {
+          setProgress(Math.max(20, pct));
+        });
+        setProcessResult(result);
+        setProgress(100);
+      } else if (tool.id === 'pdf-to-zip') {
+        setProgress(20);
+        const result = await pdfToZipClient(activeFile, (pct) => {
           setProgress(Math.max(20, pct));
         });
         setProcessResult(result);

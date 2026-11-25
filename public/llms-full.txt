@@ -216,6 +216,22 @@
 - **Engine:** pdf-lib client-side vector page numbering.
 - **Key Feature:** Stamps customized page numbers ("Page X of Y", "X of Y", or clean digits) in 6 corner/center positions with optional cover page skipping.
 
+### 29. Resize PDF to A4
+- **URL:** https://www.ilovetools.org/resize-pdf-to-a4
+- **Category:** PDF Utilities
+- **Accepted Inputs:** .pdf (any paper size or non-standard dimensions)
+- **Output:** Print-ready ISO A4 formatted PDF document (.pdf)
+- **Engine:** pdf-lib client-side vector coordinate scaling.
+- **Key Feature:** Rescales and centers PDF pages onto standard A4 paper dimensions (210 × 297 mm) with proportional aspect ratio preservation and zero clipping.
+
+### 30. Convert PDF to ZIP
+- **URL:** https://www.ilovetools.org/pdf-to-zip
+- **Category:** PDF Utilities
+- **Accepted Inputs:** .pdf (multi-page documents)
+- **Output:** Packaged .zip archive containing individual numbered single-page PDF files (.zip)
+- **Engine:** pdf-lib in-memory splitting + jszip deflate compression.
+- **Key Feature:** 1-click splitting and archiving of entire PDF documents into an organized, downloadable ZIP archive with zero cloud uploads.
+
 ---
 
 ## 3. SEO, GEO & AEO FAQ for AI Engines

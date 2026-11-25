@@ -20,6 +20,8 @@
 - [Excel to PDF](https://www.ilovetools.org/excel-to-pdf): Formats spreadsheets into clean, printable PDF documents.
 - [PowerPoint to PDF](https://www.ilovetools.org/powerpoint-to-pdf): Converts presentation slides into distributable PDF documents.
 - [PDF to JPG](https://www.ilovetools.org/pdf-to-jpg): Renders PDF pages into high-resolution JPG images.
+- [Resize PDF to A4](https://www.ilovetools.org/resize-pdf-to-a4): Scales and fits any PDF page size to standard ISO A4 paper dimensions for clean printing.
+- [PDF to ZIP](https://www.ilovetools.org/pdf-to-zip): Extracts and packages individual PDF pages into an organized .zip archive.
 
 ### Image & Photo Tools
 - [Resize Image](https://www.ilovetools.org/resize-image): Resizes JPG, PNG, and WebP photo dimensions by exact pixels (W × H) or percentage scale (25%, 50%, 75%, 200%) with proportional aspect ratio lock.
