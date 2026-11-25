@@ -1,31 +1,89 @@
+# All Crawlers Default Policy
 User-agent: *
 Allow: /
+Disallow: /api/
 
-# Generative Engine Optimization (GEO) & Search Crawlers
+# Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# OpenAI AI Crawlers & Search
 User-agent: GPTBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude Crawlers
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI Crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI & Gemini Crawlers
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+# Apple Intelligence & Siri Crawlers
 User-agent: Applebot
 Allow: /
 
-# Sitemaps and AI Specifications
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI Crawlers (Llama)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# ByteDance AI Crawler
+User-agent: Bytespider
+Allow: /
+
+# Cohere AI Crawler
+User-agent: cohere-ai
+Allow: /
+
+# Amazon AI & Alexa Crawler
+User-agent: Amazonbot
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+
+# Diffbot Knowledge Graph AI
+User-agent: Diffbot
+Allow: /
+
+# Common Crawl (Universal LLM Training Corpus)
+User-agent: CCBot
+Allow: /
+
+# Sitemaps and AI Discovery Standards
 Sitemap: https://www.ilovetools.org/sitemap.xml
 # llms.txt standard for AI search engines: https://www.ilovetools.org/llms.txt
+# llms-full.txt standard: https://www.ilovetools.org/llms-full.txt
